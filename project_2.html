@@ -1,0 +1,973 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="/part 1/project_2.css">
+      
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+       <!-- Bootstrap CSS -->
+     
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">   
+   
+       <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+       <title> New Project </title>
+       <style>
+        .page-content-main>.section, .page-content-main>.container-fluid>.section {
+          border: none;
+      }
+      .section--breadcrumbs+section {
+          border-top: 0 none;
+      }
+      .section {
+          border: none;
+      }
+      .section--no-border {
+          border-top: 0 none;
+      }
+      .section {
+          background-color: #fff;
+          border-top: 0.35714em solid #0071ce;
+      }
+      .page-content-main .container-fluid {
+          padding-right: 15px;
+          padding-left: 15px;
+      }
+      .page-content-main .container-fluid {
+          padding: 0;
+      }
+      .container-fluid {
+          max-width: 1270px;
+      }
+      .container-fluid {
+          padding-right: 15px;
+          padding-left: 15px;
+          margin-right: auto;
+          margin-left: auto;
+      }
+      h3, h4{ color: rgb(95, 95, 199);
+       font-size: 30px;}
+
+
+
+       .container3{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.modal-container{
+    position: absolute;
+    display: flex;
+   margin-left:25% ;
+    margin-right:50%;
+    background-color:rgb(0, 0, 0,0.8);
+    visibility: hidden;
+    
+  
+}
+
+.modal{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+}
+
+.close-icon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  
+}
+
+.close-icon svg{
+    width: 30px;
+   
+}
+
+.modal p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+
+.cta-button{
+  background: #095d68;
+  border: 1px solid transparent;
+  color: #fff;
+  width: 300px ;
+  height: 40px;
+  outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control input {
+  
+	display: block;
+	font-size: 12px;
+	padding: 10px;
+	width: 100%;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+    
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 15px;
+    height: 30px;
+}
+      </style>
+    
+    </head>
+    <body >
+    <header >
+      
+        <div class="row align-items-center container_2"> 
+            <div class="col">
+                <img src="https://media.istockphoto.com/vectors/vaccination-center-concept-icon-vector-id1297215366" style="width: 350px; height: 200px;">
+            </div>
+            <div class="col"> <img src="data:image/png;base64,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"  style="width: 400px; height: 200px;"> </div>
+            <div class="col" style=" display:flex; justify-content: end;" >
+                <img src="https://www.evax.tn/vendor/img/logo2.png" style="width: 300px; height: 150px;">
+            </div>
+        </div>
+
+        <nav class="navbar navbar-light" style="background-color:rgb(57, 57, 202); position:relative;z-index:10;">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: floralwhite;">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+              <span class="navbar-toggler-icon" ></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#1" style="color: floralwhite;">What is COVID-19?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#2" style="color: floralwhite;" >Corona Vaccine Info</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: floralwhite;">
+                    Some Solutions
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#3">Frequently Asked Questions</a></li>
+                    <li><a class="dropdown-item" href="#4" >Keep Yourself Safety</a></li>
+                   
+                  </ul>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#5" style="color: floralwhite;">Contact Us</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link disabled" style="color: floralwhite;">Disabled</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-info" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+    </header>
+            
+    <div style="top: 0%;bottom: 0%;left: 0%;right: 0%; position:absolute; overflow:hidden" >
+      <img src="https://inkyfada.com/wp-content/themes/inkyfada/views/post/single/images/cover-home-desk.jpg" style="background-repeat: no-repeat;background-size: cover;background-attachment: fixed;background-position: center;z-index:1;position:fixed;z-index:-1;padding:0;object-fit:cover;" class="h-12 w-100 d-none d-md-flex align-items-center justify-content-center px-0" data-track="133">
+      
+    </div>	
+
+    <div class=" d-flex align-items-center col-height text-left " style="margin-left: 50%; position:relative;z-index:10; margin-top: 40px;margin-bottom: 40px; ">
+        
+
+      <div class="detail-sec justify-content-center align-items-center">
+
+       
+          <h1 class="main-heading">Welcome to the COVID-19 Vaccination Portal</h1>
+          <p class="margin-sub-heading">Together against COVID-19</p>
+          <div class="justify-content-center align-items-center">
+              <p>
+                  <a class="btn btn btn-danger rounded-pill red-btn mb-3" style="float:right;direction: rtl;width: 100%; text-align: justify ; text-align: center;" href="/part 1/Two.html"><i class="fas fa-calendar-check fa-2x"></i>Register now for the vaccination campaign </a> 
+              </p>
+              <p> 
+                  <a class="btn btn-secondary rounded-pill align-items-center mb-3" style="float:right;direction: rtl;width: 100%; text-align: justify;text-align: center;" href="/part 1/pharmacie.html">
+                      <i class="fas fa-clinic-medical fa-2x"></i> Make an appointment for vaccination at the pharmacy now</a>
+              </p>
+               <p> 
+                  <a class="btn btn-primary rounded-pill align-items-center mb-3" style="float:right;direction: rtl;width: 100%; text-align: justify; text-align: center;" href="/part 1/clinics-info.html">
+                      <i class="fas fa-user-md fa-2x"></i> List of clinics and laboratories for vaccination </a>
+              </p>
+              
+          </div>
+
+      </div>
+  </div>
+
+    
+
+    
+    
+    
+    
+    
+			
+			
+
+			<div style="margin-left: 50%; margin-top: 50px; margin-bottom: 50px;">
+
+			     <h1 class="mb-3 style-titre-1" >In Numbers. Follow the progression of Covid-19 vaccinations in Tunisia</h1>
+			     <span class="fs-20px fw-300 lh-140" >After nearly a month's delay, the vaccination campaign against Covid-19 in Tunisia finally began on March 13.<br> The number of people vaccinated, the number of vaccine doses announced and received - will the government's objectives be met? View the regularly updated progress and projections of the campaign, in numbers.</span>
+			  <div class="style-meta mt-2" >
+
+			    	| 21  
+			      June
+			      2021 | 10 minutes   
+			
+			  </div> 
+			</div>
+		
+		
+    
+       
+
+
+
+
+
+
+
+
+
+       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top: 40px; margin-bottom: 40px; ">
+        <div class="carousel-indicators" >
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active " data-bs-interval="10000">
+            <div style=" text-align:center; margin-top: 20px;" >
+                <h3>VACCINATION AGAINST COVID-19 IS EASY!</h3>
+                <h5>Short 30-second video to answer the questions: What if I had Covid-19 more than 2 months ago?<br>
+                    Where can I get vaccinated? My 2nd dose falls during my vacation, what should I do?</h5>
+              </div>
+            <iframe width="800" height="500" src="https://www.youtube.com/embed/p-_NTypnql0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style=" margin-top: 20px;margin-left: 30%;" allowfullscreen> </iframe>
+           
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+           
+            <div style=" text-align:center; margin-top: 20px;">
+              <h3> THE SAFETY OF COVID-19 VACCINES</h3>
+              <h5>Deputy Director in the Directorate of Vaccines and Anti-Infectives of the ANSM,<br>
+                explains how vaccines against Covid-19 could be developed in less than a year and details the steps taken to ensure they are safe.</h5>
+            </div>
+            <iframe width="800" height="500" src="https://www.youtube.com/embed/4VpW3KVohxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style=" margin-top: 20px;margin-left: 30%;" allowfullscreen></iframe>
+          </div>
+          <div class="carousel-item">
+            <div style=" text-align:center; margin-top: 20px;">
+              <h3>PROTECT THE COMMUNITY</h3>
+              <h5>Getting vaccinated means protecting yourself, but also protecting those around you.<br>
+                The more people a community has vaccinated, the more it avoids the risk of epidemics.<br>
+                Vaccination saves millions of lives each year and helps eliminate disease in many parts of the world.
+                </h5>
+            </div>
+            <iframe width="800" height="500" src="https://www.youtube.com/embed/-sc7rpeJYnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style=" margin-top: 20px;margin-left: 30%;" allowfullscreen></iframe>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+       
+     
+
+
+
+
+
+
+
+
+      <section class="section section--no-pb section--no-border" >
+        <div class="container-fluid">
+          <div class="section__inner">
+                          <div class="row">
+                                      
+                                      
+                      <div class="col-xs-12 center-block">
+      
+                                          
+                                          
+                                          
+                                                              <a id="main-content"></a>
+                            <div class="region region-content">
+            <section class="node node--type-ct-standard node--view-mode-full ct ct--view-30">
+        <div class="ct__page-content">
+          
+      
+              <div class="ct__meta__block ct__meta__block--top">
+            
+          </div>
+          
+                
+            
+            <div class="field field--name-field-ct-components field--type-entity-reference-revisions field--label-hidden field--items" style="margin-top: 40px; margin-bottom: 40px;">
+                    <div class="field--item">
+      <div class="paragraph paragraph--type-pt-text paragraph--view-mode-default text-image text-image--image-full-width">
+        <a name="1" ></a>
+        <div class="text">
+          
+                  <div class="field field--name-field-pt-text field--type-text-long field--label-hidden field--item"><h3 style="text-align: center; color: rgb(95, 95, 199); font-size: 30px;">What is COVID-19?</h3>
+      <p><strong>COVID-19 is the disease associated with severe acute respiratory syndrome coronavirus-2 (SARS-CoV-2). SARS-CoV-2 is a new strain of coronavirus that had not been identified in humans prior to December 2019. There are different types of coronaviruses and, although they mostly circulate among animals, some can also infect humans.</strong></p>
+      <p>The COVID-19 outbreak that started in late 2019 was declared a pandemic by the World Health Organization (WHO) on 11 March 2020 (1). This is the first pandemic caused by a coronavirus.</p>
+      </div>
+            
+        </div>
+      </div>
+      
+      </div>
+                    <div class="field--item">
+      <div >
+        
+             
+            
+        <div class="text">
+          
+                  <div >
+                    <div class="row justify-content-center" >
+                      <div class="col-7">
+                        <h3>What are the symptoms of COVID-19?</h3>
+      <p>COVID-19 varies in severity from <strong>having no symptoms at all</strong> (being asymptomatic) to having:</p>
+      <ul>
+      <li>fever,</li>
+      <li>cough,</li>
+      <li>sore throat,</li>
+      <li>change or loss of taste and/or smell,</li>
+      <li>general weakness,</li>
+      <li>diarrhoea,</li>
+      <li>fatigue,</li>
+      <li>muscle pains.</li>
+      </ul>
+    
+      <h4>In serious cases, symptoms can include:</h4>
+      <ul>
+      <li>severe lung infection,</li>
+      <li>sepsis and septic shock – a generalised infection and inflammatory response,</li>
+      </ul>
+      <p>all of which need specialised medical care and support.</p>
+      <p>A patient’s condition can deteriorate rapidly, often during the second week of disease.</p>
+      <p>&nbsp;</p>
+    
+                      </div>
+                      <div class="col-5">
+                        <figure class="image" data-zoom-control="">
+                          <img class="img img-rounded img-responsive" alt="Symptoms of COVID-19" src="https://vaccination-info.eu/sites/default/files/styles/is_large/public/images/symptoms-covid-19.png?itok=X9V5lOQM" loading="lazy" typeof="foaf:Image" data-original="https://vaccination-info.eu/sites/default/files/styles/is_full/public/images/symptoms-covid-19.png?itok=s8lFHrIA" style="cursor: -webkit-zoom-in; " width="600px" height="400px" >
+                          <span class="image__zoom-icon">
+                              <svg width="18" height="18" viewBox="0 0 22 22">
+                                  <path d="M3.4 20.2L9 14.5 7.5 13l-5.7 5.6L1 14H0v7.5l.5.5H8v-1l-4.6-.8M18.7 1.9L13 7.6 14.4 9l5.7-5.7.5 4.7h1.2V.6l-.5-.5H14v1.2l4.7.6"></path>
+                              </svg>
+                          </span>
+                          </figure>
+                      </div>
+                    </div>
+    
+    
+                  
+    
+      
+      </div>
+    
+      <h3 style="color: rgb(95, 95, 199); font-size: 30px;"><strong>What are the complications of COVID-19?</strong></h3>
+      <p>A percentage of those affected by COVID-19 will require hospitalisation, some even requiring intensive care, sometimes for extended periods. People developing severe respiratory symptoms may require mechanical ventilation support, which may make them more susceptible to secondary bacterial infections. In addition, COVID-19 patients can experience complications, such as strokes or heart attacks, due to increased coagulation. Some patients experience neurological symptoms, such as personality changes or changes in alertness.</p>
+      <p>Hospitalisation rates increase rapidly with age, in particular for those aged 60 years and above, and for those with underlying health conditions.</p>
+      <p>For COVID-19 cases, the risk of dying increases rapidly with age, and is substantially higher than for influenza. It is increasingly evident that some patients may suffer long-term effects from COVID-19 infection, including difficulty in breathing and an elevated heart rate.</p>
+            
+        </div>
+      </div>
+      
+      </div>
+    
+      <div class="row justify-content-center" >
+          
+          <div class="col-5">
+            <figure class="image" data-zoom-control="">
+              <img class="img img-rounded img-responsive" alt="Symptoms of COVID-19" src="https://vaccination-info.eu/sites/default/files/styles/is_large/public/images/transmission-covid-19-small_0.png?itok=fF7J6Jnr" loading="lazy" typeof="foaf:Image" data-original="https://vaccination-info.eu/sites/default/files/styles/is_full/public/images/symptoms-covid-19.png?itok=s8lFHrIA" style="cursor: -webkit-zoom-in; " width="600px" height="400px" >
+              <span class="image__zoom-icon">
+                  <svg width="18" height="18" viewBox="0 0 22 22">
+                      <path d="M3.4 20.2L9 14.5 7.5 13l-5.7 5.6L1 14H0v7.5l.5.5H8v-1l-4.6-.8M18.7 1.9L13 7.6 14.4 9l5.7-5.7.5 4.7h1.2V.6l-.5-.5H14v1.2l4.7.6"></path>
+                  </svg>
+              </span>
+    
+        </div>
+        <div class="col-7">
+          <div class="text">
+          
+            <div class="field field--name-field-pt-text field--type-text-long field--label-hidden field--item"><h3 style="color: rgb(95, 95, 199); font-size: 30px;"><strong>How does COVID-19 spread?</strong></h3>
+        <p>While bats are believed to be the original host of the virus, the virus now spreads from person to person (human-to-human transmission).</p>
+        <p>It is currently estimated that if preventive measures are not taken, on average one infected person will infect between two and three other people.</p>
+        <p>The virus is transmitted mainly via respiratory droplets and aerosols when sneezing, coughing, or interacting with others in close proximity (usually less than two metres). These droplets can be inhaled, or they can land on surfaces that other people may come into contact with, causing them to become infected when they touch their nose, mouth or eyes. Transmission can also occur from a person who is infected two days before they begin showing symptoms.</p>
+        <p>The virus can survive on different surfaces for several hours (on copper or cardboard) or up to a few days (on plastic or stainless steel).</p>
+        <p>The average incubation period for COVID-19 (i.e. the time between exposure to the virus and onset of symptoms) is currently estimated to be around five to six days, but almost always between one and 14 days.</p>
+        </div>
+        
+        </div>  
+        </div>
+      </div>
+    
+      
+       <div class="row justify-content-center" >
+        <div class="col-7">
+          <div class="text">
+          
+            <div class="field field--name-field-pt-text field--type-text-long field--label-hidden field--item"><h3><strong>Who is at risk of COVID-19?</strong></h3>
+    <p>Everyone is at risk of getting COVID-19, with some population groups having a higher risk of developing severe disease. Symptoms in children tend to be less severe than in adults.</p>
+    <p>Crowded indoor environments provide opportunities for COVID-19 outbreaks, with prisons, migrant centres and food processing plants being examples of places where outbreaks have been reported. It is possible that cold and humid air enhances the risk of transmission.</p>
+    <h4 style="color: rgb(95, 95, 199); font-size: 30px;">Those groups at increased risk of developing severe COVID-19 disease are:</h4>
+    <ul>
+    <li>people aged 60 years and above;</li>
+    <li>people with underlying health conditions, such as obesity, hypertension, diabetes, cardiovascular disease, chronic respiratory disease, or weakened immune systems.</li>
+    </ul>
+    </div>
+      
+    </div>
+    
+        </div>
+        <div class="col-5">
+          <div class="field field--name-field-pt-image field--type-entity-reference field--label-hidden field--item">  <figure class="image" data-zoom-control="">
+            <img class="img img-rounded img-responsive" alt="Risk groups of COVID-19" src="https://vaccination-info.eu/sites/default/files/styles/is_large/public/images/risk-groups-covid-19.png?itok=jhFkfO_H" loading="lazy" typeof="foaf:Image" data-original="https://vaccination-info.eu/sites/default/files/styles/is_full/public/images/risk-groups-covid-19.png?itok=s6UI8ONg" style="cursor: -webkit-zoom-in; "width="600px"; height="300px";>
+            <span class="image__zoom-icon">
+                <svg width="18" height="18" viewBox="0 0 22 22">
+                    <path d="M3.4 20.2L9 14.5 7.5 13l-5.7 5.6L1 14H0v7.5l.5.5H8v-1l-4.6-.8M18.7 1.9L13 7.6 14.4 9l5.7-5.7.5 4.7h1.2V.6l-.5-.5H14v1.2l4.7.6"></path>
+                </svg>
+            </span>
+            </figure>
+        
+        </div>
+            </figure>
+        </div>
+      </div>
+    
+    
+    
+    <div class="row justify-content-center" >
+      
+      <div class="col-5">
+        <figure class="image" data-zoom-control="">
+          <img class="img img-rounded img-responsive" alt="Prevention of COVID" src="https://vaccination-info.eu/sites/default/files/styles/is_large/public/images/prevention-covid-19-small-02_0.png?itok=91dbSJEi" loading="lazy" typeof="foaf:Image" data-original="https://vaccination-info.eu/sites/default/files/styles/is_full/public/images/prevention-covid-19-small-02_0.png?itok=MCBrMryB" style="cursor: -webkit-zoom-in;" width="500px"; height="300px";>
+          <span class="image__zoom-icon">
+              <svg width="18" height="18" viewBox="0 0 22 22">
+                  <path d="M3.4 20.2L9 14.5 7.5 13l-5.7 5.6L1 14H0v7.5l.5.5H8v-1l-4.6-.8M18.7 1.9L13 7.6 14.4 9l5.7-5.7.5 4.7h1.2V.6l-.5-.5H14v1.2l4.7.6"></path>
+              </svg>
+          </span>
+    
+    </div>
+    <div class="col-7">
+     
+      
+        <div class="text">
+          
+          <div class="field field--name-field-pt-text field--type-text-long field--label-hidden field--item"><h3 style="color: rgb(95, 95, 199); font-size: 30px;"><strong>How can COVID-19 be prevented?</strong></h3>
+    <p>Vaccines to prevent COVID-19 first became available in the EU/EEA in late December 2020.</p>
+    <p>It is recommended to keep physical distance (a minimum of one or, ideally, two metres) from others in public places, and to avoid gatherings of large groups of people to reduce the risk of infection through respiratory droplets.</p>
+    <p>The virus enters&nbsp;the body via the eyes, nose or mouth, so it is important to avoid touching the face&nbsp;with unwashed hands. Handwashing with soap and water for at least 20 seconds, or cleaning the hands thoroughly with alcohol-based solutions, gels or tissues is recommended in all settings.</p>
+    </div>
+    
+    </div>
+    
+    
+    </div>
+    </div>
+    
+    
+    </div>
+      
+      </div>
+    
+    
+    
+      
+    
+    
+    
+      <div class="row justify-content-center" >
+        <div class="col-7">
+          <div class="text">
+          
+            <h3 style="color: rgb(95, 95, 199); font-size: 30px;"><strong>How is it treated?</strong></h3>
+            <p>Scientists and clinicians are studying several treatments for COVID-19.</p>
+            <p>Healthcare providers mostly treat COVID-19 symptoms rather than targeting the virus itself by offering supportive care (e.g. oxygen therapy, fluid management) for infected persons, which can be highly effective.</p>
+            <p>For severely and critically ill patients, a number of medicines are being tested to target the virus, but their use still needs to be assessed more thoroughly. Several international clinical trials are ongoing to assess the effectiveness of various medicines and antibodies.</p>
+           
+    </div>
+    
+        </div>
+        <div class="col-5">
+         
+          <figure>
+            <img class="img img-rounded img-responsive" alt="Treatment of COVID-19" src="https://vaccination-info.eu/sites/default/files/styles/is_large/public/images/testing-covid-19-small.png?itok=dilYJ6RC" loading="lazy" typeof="foaf:Image" data-original="https://vaccination-info.eu/sites/default/files/styles/is_full/public/images/testing-covid-19-small.png?itok=4C-1c10L" style="cursor: -webkit-zoom-in;"  width="500px"; height="300px">
+            <span class="image__zoom-icon">
+                <svg width="18" height="18" viewBox="0 0 22 22">
+                    <path d="M3.4 20.2L9 14.5 7.5 13l-5.7 5.6L1 14H0v7.5l.5.5H8v-1l-4.6-.8M18.7 1.9L13 7.6 14.4 9l5.7-5.7.5 4.7h1.2V.6l-.5-.5H14v1.2l4.7.6"></path>
+                   
+                </svg>
+            </span>
+            </figure>
+        </div>
+      </div>
+           
+      
+    
+    
+    
+    
+     
+      
+                   
+      
+        
+                
+        
+    </div>
+    
+                  
+      
+      
+            </div>
+          
+          
+      
+        </div>
+      </section>
+      
+      
+      
+        </div>
+      
+                                        </div>
+      
+                                                    </div>
+                      </div>
+        </div>
+      </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+      <div  style="background-color: white; margin-top: 40px; margin-bottom: 40px; padding-bottom: 40px; padding-top: 40px; box-shadow: 0px 4px 12px rgb(0 0 0 / 15%); " >
+        <div ><article class="container" style="box-shadow: 0px 4px 12px rgb(0 0 0 / 15%);">
+  
+          <a name="2" ></a>
+  <div >
+  <div >
+    
+    <div><div class=" io-tile-common io-tile-title">
+      <h1 style="font-family: 'Courier New', Courier, monospace; text-align: center; font-size: 60px;">Corona Vaccine</h1>
+  </div>
+</div>
+<div ><div class="io-tile-common io-tile-introduction "><div class="p-class">Tunisia will provide the Coronavirus vaccine for free to every resident. Every vaccine center has a drop-in option.</div></div></div>
+                <div class="div-class"  >Residents under the age of 18</h2>
+  
+  <p class="p-class"><span >Residents over the age of 12 can now make use of the drop-in vaccination in their district or register online to take the vaccine. To register you need to have an ID.</span></p>
+  
+  <p class="p-class "><span >It is recommended that residents under the age of 18 are offered the BioNTech/Pfizer vaccine.&nbsp;</span></p>
+  
+  <h3 class="div-class"><span>Young people between 12 and 15 years</span></h3>
+  
+  <p class="p-class "><span  >We will offer residents born in 2006–2008 one dose of the vaccine. Those who have had Corona will not need the vaccine.&nbsp;</span></p>
+  
+  <h3  class="div-class"><span>Consent and self-declaration from parents</span></h3>
+  
+  <p class="p-class "><span >Everyone under the age of 16 must have the consent of their parents to receive the corona vaccine. You must bring the consent form to the vaccination appointment. The self-declaration form must also be completed by a parent in advance of vaccination.</span></p>
+  
+  
+  
+  <h2 class="div-class">Dose 1</h2>
+  
+  <p class="p-class "><span >If you are a resident in Tunisia, you can register for the vaccine or show up at the drop-in. </span></p>
+  
+  <p style="font-size: 17px;"><span ><a class="  bouttonds " href="/part 1/one.html" >Register if you want the vaccine</a></span></p>
+  
+  <p class="p-class "><span  >After you register, you will receive an SMS with information about your appointment.&nbsp;</span><span>Remember to bring a consent and self-declaration form if you are under the age of 16.</span></p>
+  
+  
+  
+  <h2  class="div-class">Dose 2</h2>
+  
+  <p class="p-class"><span >The appointment for dose 2 is set up when you get dose 1 of the vaccine. You can also drop-in to get dose 2 in the same district where you got dose 1. If you have had Corona, you will only need dose 1.</span></p>
+  
+  <p class="p-class"><span  >If you moved to Tunisia after you got dose 1, you can get dose 2 in Oslo. Register for dose 2 here, and we will be in touch with you when you get an appointment or drop in at the closest vaccine center. &nbsp;</span></p>
+  
+  
+  
+  <ul style="color:cadetblue;"  id="li"><li>You must remember to comply with the minimum interval between doses:
+  <ul  id="li"><li>4 weeks for residents above the age of 18</li>
+  <li>12 weeks for residents aged 16 or 17</li>
+  </ul></li>
+  
+</ul>
+<h2 id="toc-4">Dose 3</h2>
+  
+  <h3 class="div-class" >Residents with severe immune deficiency&nbsp;</h3>
+  
+  <p class="p-class"><span >Residents with severe immune deficiency will be offered dose 3 of the corona vaccine. This is available through drop-in at the same vaccine center where you got dose 2. Remember to bring documentation that shows you are in the target group. Valid documentation can be a letter from your doctor or proof of medication use in the form of a prescription, an e-prescription or packaging with your name and a dated label from a pharmacy. You can find more information about documentation requirements at FHI.no. The interval between dose 2 and dose 3 should be minimum 4 weeks.&nbsp;</span></p>
+  
+  <h3 class="div-class">Booster dose for residents above the age of 65&nbsp;</h3>
+  
+  <p class="p-class"><span >Residents over 65 will be offered dose 3 as a booster dose. The districts will set up an appointment for you. The interval between dose 2 and dose 3 for this group should be at least 5 months. Both Pfizer and Moderna can now be administered as a booster dose.&nbsp;</span></span></span></span></span></span></span></p>
+  
+  <p class="p-class"><span >It is possible for residents over 65 to drop-in for the booster dose. You have to go to the same vaccine center where you got dose 2. </span></p>
+  
+  <p class="p-class"><span >If you are going to take the flu vaccine, you must make sure that 1 week passes between you taking the flu vaccine and the corona vaccine.</span></p>
+  
+  </div>
+    
+            </div>
+  </div>
+  </article>
+  </div>            </div>
+
+
+
+
+
+
+
+
+      <div style="background-color: white; margin-top: 60px; margin-bottom: 60px; box-shadow: 0px 4px 12px rgb(0 0 0 / 15%);" >
+        <div class="row">
+            <div class="col-sm-12 col-lg-8 offset-lg-2 text-center">
+              <a name="3" ></a>
+                <h1 class="main-heading red-color">Frequently Asked Questions</h1>
+
+            </div>
+        </div>
+
+
+        <div class="row mt-6 feature-card">
+
+
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-height-features">
+                <div class="card box text-center">
+                    <div class="card-body box__image" style="direction: rtl;">
+                        <div class="feature-icon red-color">
+                            <i class="lar la-chart-bar"></i>
+                        </div>
+                        <h2 class="card-title"><span class="notranslate"> What are the main principles of the vaccination strategy against the Corona virus <br> ? </span></h2>
+                        <p class="card-text sub-heading cut-text">
+
+                        </p>
+                        <p>
+                        Tunisia has set itself the following principles<br>
+                            Fair and timely access to free, effective, safe and high-quality vaccines approved by scientific evidence .</br>
+                             Personal freedom based on transparency and information provision .
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-height-features">
+                <div class="card box text-center">
+                    <div class="card-body box__image" style="direction: rtl;">
+                        <div class="feature-icon grey-color">
+                            <i class="las la-question-circle"></i>
+                        </div>
+                        <h2 class="card-title"> How to register for the Covid-19 vaccine <br> ?  </h2>
+                        <p class="card-text sub-heading">
+                          <a href="/part 1/one.html">Register first here</a>
+                            <br>SMS:  </b> 85355 <br>
+                            <b>USSD :</b> *2021#
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-height-features">
+                <div class="card box text-center">
+                    <div class="card-body box__image" style="direction: rtl;">
+                        <div class="feature-icon red-color">
+                            <i class="las la-syringe"></i>
+                        </div>
+                        <h2 class="card-title">What are the goals of vaccination  <br> ? </h2>
+                        <p class="card-text sub-heading">The first goal of vaccination is to reduce the number of serious cases of Covid-19 and thus the number of deaths, which is confirmed by the results of clinical studies of vaccines that have proven their effectiveness.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-height-features mt-4">
+                <div class="card box text-center">
+                    <div class="card-body box__image" style="direction: rtl;">
+                        <div class="feature-icon grey-color">
+                            <i class="las la-coins"></i>
+                        </div>
+                        <h2 class="card-title">Will the COVID-19 vaccine be free <br> ? </h2>
+                        <p class="card-text sub-heading">Yes. Vaccination will be free for everyone in Tunisia, but according to the priority set by the authorities.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class=" col-sm-12 col-md-6 col-lg-4 col-height-features mt-4">
+                <div class="card box text-center">
+                    <div class="card-body box__image" style="direction: rtl;">
+                        <div class="feature-icon red-color">
+                            <i class="las la-map-marker"></i>
+                        </div>
+                        <h2 class="card-title">Where will the vaccination take place <br> ? </h2>
+                        <p class="card-text sub-heading cut-text">
+
+                        </p><ul style="list-style-type: disc;">
+                            There will be 25 regional vaccination centers and about 200 regional vaccination centers to be determined by the regional authorities according to the criteria:
+                            One (or two) large state centers open all week
+                            One center per delegation is open on weekends.
+                        </ul>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class=" col-sm-12 col-md-6 col-lg-4 col-height-features mt-4">
+                <div class="card box text-center">
+                    <div class="card-body box__image" style="direction: rtl;">
+                        <div class="feature-icon grey-color">
+                            <i class="las la-exclamation-circle"></i>
+                        </div>
+                        <h2 class="card-title"> What should I do if I encounter a problem while registering <br> ? </h2>
+                        <p class="card-text sub-heading">
+                            A toll-free number was created for inquiries throughout the vaccination campaign. Toll Free: 80102021, open Monday to Friday from midnight to 5 pm  <span style="color:green; font-whight :bold ; direction: ltr;">number:  80102021</span><br>، Friday from midnight to 5 pm</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        
+
+
+
+       
+
+
+
+
+
+        <div  class="divIcon" style="margin-top: 40px; margin-bottom: 40px; box-shadow: 0px 4px 12px rgb(0 0 0 / 15%);" id="li">
+          <a name="4" ></a>
+  
+          <div class="c-header">
+            <h2><span ></span>Together against Covid-19</h2>  </div>
+        
+            <div class="">
+            <ul class="cgestes" >
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_mains_0.jpg" alt=""  >      <div>Wash your hands regularly
+              <br>or use a hydro-alcoholic solution</div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_coude_0.jpg" alt="">      <div>Cough or sneeze into his elbow
+              <br>or in his handkerchief</div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_mouchoir_0.jpg" alt="">      <div>Blow your nose in a disposable tissue
+             <br> then throw it away</div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_masque-obligatoire_0.jpg" alt="">      <div>Wear a mask when the distance
+             <br> one meter cannot be respected
+              <br>and wherever it is compulsory</div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_2-metres_0.jpg" alt="">      <div>Maintain a distance of at least two meters from others</div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_contact-sociaux_0.jpg" alt="">      <div>Limit social contacts as much as possible </div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_visage_0.jpg" alt="">      <div>Avoid touching your face
+            </div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_aeration.jpg" alt="">      <div>Air the rooms for 10 minutes, three times a day</div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_bonjour_0.jpg" alt="">      <div>Greet without shaking hands and stop hugging</div>
+          </li>
+            <li>    <img src="https://www.gouvernement.fr/sites/default/files/cimages/pictogramme_outils-numerique_0.jpg" alt="">      <div>Use digital tools (AllAntiCovid)</div>
+          </li>
+          </ul>
+          </div>
+        
+          <div class="c-texte">
+            <p></p>
+  
+  <div class="rtecenter" style="padding-bottom: 60px;margin-top: 80px;"><a class="bouttonds atClass" href="#1" target="_blank" data-smarttag-click="{&quot;name&quot;: &quot;/info-coronavirus/comprendre-la-covid-19&quot;, &quot;type&quot;: &quot;navigation&quot;,&quot;chapter1&quot;:&quot;info_coronavirus_covid_19&quot;}">
+    More information about the disease, its transmission and its symptoms</a></div>
+  
+  
+      </div>
+        </div>
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div  class="container" style="margin-left: auto; margin-top: 60px;box-shadow: 0px 4px 12px rgb(0 0 0 / 30%);" >
+            <div style="text-align:center">
+              <a name="5" ></a>
+              <h2>Contact Us</h2>
+              <p>We are allways here for more informations</p>
+            </div>
+            <div class="row">
+              <div class="column">
+                <img src="https://th.bing.com/th?id=OIF.aVhBrGk%2bvR91%2bXFiptH4%2bw&w=212&h=185&c=7&r=0&o=5&pid=1.7" style="width:50%; margin-left: 25%;">
+              </div>
+              <div class="column" >
+                
+                  <form id="form">
+                  <div class="input-control">
+                    <label for="firstname">First Name</label>
+                    <input id="firstname" id="fname" name="firstname" type="text" placeholder="Your name..">
+                    <div class="error"></div>
+                </div>
+
+
+                  <div class="input-control">
+                    <label for="lastname">Last Name</label>
+                    <input id="lastname" name="lastname" id="lname" type="text" placeholder="Your last name..">
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-control">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="text" id="ename">
+                  <div class="error"></div>
+              </div>
+
+                  <label for="country">State</label>
+                  <select id="country" name="country">
+                    <option value="australia">Tunis</option>
+                    <option value="canada">Nabeul</option>
+                    <option value="usa">Sousse</option>
+                  </select>
+                  <label for="subject">Questions or messages </label>
+                  <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                  
+
+                  
+            
+                  <div style="margin-top: 30px; text-align: center; ">
+                    <div class="modal-container" style="padding: 30px;"  >
+                        <div class="modal" >
+                            <div class="close-icon">
+                                <!-- x button --> 
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </div>
+                            <p>please make a quick verification!! <br>
+                              
+                            </p> 
+                           
+                        </div>
+                    </div>
+            
+                    <button class="cta-button"  type="submit">Submit</button>
+                </div>
+
+
+                </form>
+
+                
+
+              </div>
+            </div>
+          </div>
+
+    <footer>
+        <section class=""  style="border: thick double #32a1ce;;
+        border-radius: 20px;
+        text-align: center;
+        padding-top: 20px;
+        margin-top: 50px;">
+            <div >
+                <div class="row">
+                    <div class="col-12 text-center footer-content">
+                        <div class="footer-icon" >
+                          <a href="https://www.facebook.com"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2dtMZTzFsAL9_Omb18OEEd1rII6Fts065DrHX-kw&usqp=CAU" style="width: 50px; height:50px ; margin-right: 30px;"></a>
+                           <a href="https://twitter.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="data:image/png;base64,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" style="width: 50px; height:50px ; margin-right: 30px;"></a>
+                           <a href="https://www.instagram.com/?hl=fr"><img src="https://davidmeessen.com/wp-content/uploads/2020/09/ew-instagram-logo-transparent-related-keywords-logo-instagram-vector-2017-115629178687gobkrzwak.png" style="width: 50px; height:50px ;"></a>
+                        </div>
+                        <p class="sub-heading footer_text text-black">When you click the "Add Registration Request" button from your registration application form on our website, you indicate that you are familiar with the terms and conditions
+                          Privacy Policies. You voluntarily agree to the terms and conditions set forth </p>
+
+                        <p class="sub-heading footer_text text-black">This site is the result of a joint national action and commitment by the National Informatics Center, the Independent High Authority for Elections, the Informatics Center of the Ministry of Health, the National Agency for Informatics Safety, telecom operators (Tunisia Telecom, Ooredoo and Orange), the Ministry of Health and the Ministry of Communication Technologies.
+                          When you click the "Add registration request" button from your registration application form on our website, you indicate that you are familiar with the terms and conditions and privacy policies. and that you voluntarily agree to the terms and conditions set forth.
+                          Republic of Tunisia - Ministry of Health - Registration portal for the vaccination campaign against Covid 19
+   <br><span class="fontbold">     All rights reserved © 2021   </span></p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   
+        <script src="project_2.js"></script>
+    </body>
+</html>

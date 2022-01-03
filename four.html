@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">   
+   
+       <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	
+
+	   <style>
+		   @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+		   * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container1{
+	border-radius: 50px 0px 0px 50px;
+}
+.container2{
+	border-radius: 0px 50px 50px 0px;
+}
+
+
+.left-container {
+	
+	background: #082355;
+	overflow: hidden;
+	padding: 40px 0 0 0;
+	position: relative;
+	text-align: center;
+	width: 300px;
+  }
+
+  .left-container h1 {
+  color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  font-size: 24px;
+}
+
+
+.left-container .puppy {
+  bottom: -5px;
+  position: absolute;
+  text-align: center;
+}
+
+.left-container .puppy:before {
+  background: #807182;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: .4;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.left-container img {
+  -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+  width: 70%;
+}
+
+.right-container {
+  background: #b9ddff;
+  
+ 
+  
+}
+
+.right-container h1:nth-of-type(1) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.5em;
+  font-weight: 600px;
+}
+
+
+ .set {
+  display: flex;
+justify-content: space-between;
+  margin: 10px 30px 10px 30px ;
+}
+
+ input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+
+ input, .right-container label {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+ header {
+	padding:30px  ;
+	
+}
+
+.right-container label, .right-container input, .right-container .pets-photo {
+  width: 176px;
+}
+
+ .pets-photo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  
+		  display: grid;
+      
+}
+
+ .pets-photo button {
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  margin-right: 10px;
+  outline: none;
+  width: 38px;
+}
+
+ .pets-photo button i {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+}
+
+
+
+ footer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  
+  
+  display: grid;
+  padding: 5px 40px;
+}
+
+ footer button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Montserrat", sans-serif;
+}
+
+ footer #back {
+  background: #fff;
+  -webkit-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+}
+
+ footer #back:hover {
+  background: #171A2B;
+  color: white;
+}
+
+ footer #next {
+  background: #095d68;
+  border: 1px solid transparent;
+  color: #fff;
+  width: 100% !important;
+}
+
+ footer #next:hover {
+  background: #171A2B;
+  cursor: pointer;
+}
+
+.pets-name label, .pets-breed label, .pets-birthday label, .pets-gender label, .pets-spayed-neutered label, .pets-weight label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.radio-container {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.radio-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+  width: 80px;
+}
+
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+.radio-container input[type="radio"]:checked + label {
+  background: #abc3f7;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+	body {
+    font-size: 1.1em;
+  }
+  .left-container {
+    display: none;
+  }
+  .set {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .right-container label, .right-container input, .right-container .pets-photo {
+    width: 100%;
+    margin-bottom: .2em;
+    margin-top: .2em;
+  }
+  .pets-name {
+    margin-bottom: .2em;
+    margin-top: .2em;
+  }
+  .radio-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    font-size: .7em;
+  }
+  .right-container {
+    width: auto;
+  }
+}
+
+.container3{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.modal-container{
+    position: absolute;
+    display: flex;
+   
+    
+    background-color:rgb(0, 0, 0,0.8);
+    visibility: hidden;
+    
+   margin-bottom: 70%;
+}
+
+.modal{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+}
+
+.close-icon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  
+}
+
+.close-icon svg{
+    width: 30px;
+   
+}
+
+.modal p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+
+.cta-button{
+  background: #095d68;
+  border: 1px solid transparent;
+  color: #fff;
+  width: 300px ;
+  height: 40px;
+  outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+	   </style>
+	</head>
+<body style="background-image: url('https://417n6askfdo3na0t04com9tv-wpengine.netdna-ssl.com/wp-content/uploads/2021/02/covid-vaccine-icon-300x300.png');">
+	<nav class="navbar navbar-light bg-info">
+		<div class="container-fluid">
+		  <a class="navbar-brand"><img src="https://media.istockphoto.com/vectors/vaccination-center-concept-icon-vector-id1297215366" style="width: 270px; height: 160px;"></a>
+		  <form class="d-flex">
+			<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-success" type="submit">Search</button>
+		  </form>
+		</div>
+	  </nav>
+
+	  <div class="container-fluid">
+		<div class="row">
+		  <div class="col-xs-12 col-sm-8 col-md-10">
+			<ol class="breadcrumb">
+						  <li><a href="/part 1/project_2.html">Home</a></li>
+						  <li>  >>>  </li>
+              <li><a href="/part 1/Two.html">Type of citizen</a></li>
+              <li>  >>>  </li>
+						<li>Register now for the vaccination campaign</li>
+					</ol>
+		  </div>
+		</div>
+	  </div>
+
+	  <div style="background-color: #0071ce; padding: 10px;">
+		<h1 style=" color: white; margin-left:10% ; font-size: 60px;">Registration form for foreign citizen</h1>
+	  </div>
+
+	  
+
+
+ <div class="container " style="margin-top: 30px; margin-bottom: 30px; ">
+	  <div class="row justify-content-start " >
+        <div class="left-container col-4 container1 "  >
+            <h1 style="color: white;">
+                Registration Form
+            </h1>
+            <div class="puppy">
+                <img src="https://portal.ct.gov/-/media/Coronavirus/COVID-alert-icon.svg?sc_lang=en&la=en&hash=1263C194F844D9709FEE0FEA1DF80DC3" />
+            </div>
+        </div>
+        <div class="right-container col-8 container2 ">
+            <form name="vaccination-form"  >
+                <header>
+                    <h1>Fill out this form and enter your details accurately<i class="fa fa-paw" style="margin-left: .5em"></i></h1>
+                    <div class="set">
+                        <div class="owners-name">
+                            <label for="pets-name">Name</label><br>
+                            <input id="pets-name" placeholder="Name" type="text" name="Name"></input>
+                        </div>
+                        <div class="pets-name">
+                            <label for="pets-color">Phone Number</label>
+                            <input id="phone" placeholder="Phone Number" type="text" name="phone-number"></input>
+                        </div>
+                    </div>
+                    <div class="set">
+                        <div class="pets-breed">
+                            <label for="Accommodation">Accommodation</label>
+                            <input id="Accommodation" placeholder="Accommodation" type="text" name="Accommodation"></input>
+                        </div>
+                        <div class="pets-birthday">
+                            <label for="Nationality">Nationality</label>
+                            <input id="Nationality" placeholder="Nationality" type="text" name="Nationality"></input>
+                        </div>
+                    </div>
+                    <div class="set">
+                        <div class="pets-breed">
+                            <label for="zipcode">Zipcode</label>
+                            <input id="zipcode" placeholder="Zipcode" type="text" name="zipcode"></input>
+                        </div>
+                        <div class="pets-birthday">
+                            <label for="email">Email</label>
+                            <input id="email" placeholder="Email" type="text" name="email"></input>
+                        </div>
+                    </div>
+                    <div class="set">
+                        <div class="pets-breed">
+                            <label for="Pass number">Pass number</label>
+                            <input id="Pass number" placeholder="Pass number" type="text" name="Pass number"></input>
+                        </div>
+                        <div class="pets-birthday">
+                            <label for="birthday">Birthday</label>
+                            <input id="birthday" placeholder="MM/DD/YYYY" type="date" name="birthday"></input>
+                        </div>
+                    </div>
+
+					<div class="set">
+                        <div class="pets-gender">
+                            <label for="pet-gender-female">Do you have any chronic illness</label>
+                            <div class="radio-container">
+                                <input id="pet-gender-female" name="pet-gender" type="radio" value="female" name="illnes"></input>
+                                <label for="pet-gender-female">Yes</label>
+                                <input id="pet-gender-male" name="pet-gender" type="radio" value="male" name="gender"></input>
+                                <label for="pet-gender-male">No</label>
+                            </div>
+                        </div>
+                        <div class="pets-spayed-neutered">
+                            <label for="pet-spayed">Did you receive a dose of vaccine ? </label>
+                            <div class="radio-container">
+                                <input id="pet-spayed" name="spayed-neutered" type="radio" value="yes" name="spayedornot"></input>
+                                <label for="pet-spayed">Yes</label>
+                                <input id="pet-neutered" name="spayed-neutered" type="radio" value="no" name="spayedornot"></input>
+                                <label for="pet-neutered">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="set">
+                        <div class="pets-breed">
+                            <label for="chronic illness">Chronic illness</label>
+                            <input id="pets-breed" placeholder="Chronic illness" type="text" name="chronic illness"></input>
+                        </div>
+                        <div class="pets-birthday">
+                            <label for="type of vaccination">Type of vaccination</label>
+                            <input id="pets-color" placeholder="Type of vaccination" type="text" name="type of vaccination"></input>
+                        </div>
+                    </div>
+
+                    <p>
+                        
+
+                    
+                    
+                      <div class="container3">
+                        <div class="modal-container">
+                            <div class="modal">
+                                <div class="close-icon">
+                                    <!-- x button --> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
+                                </div>
+                                <p>Thank you for your enregistration!! <br>
+                                  <img src="https://cdn.codespeedy.com/wp-content/uploads/2018/12/heart-300x238.png" width="100px" height="100">
+                                </p> 
+                               
+                            </div>
+                        </div>
+                
+                        <button class="cta-button">Submit</button>
+                    </div>
+  </div>
+</div>
+</div>
+                </header>
+                
+            </form>
+        </div>
+    </div>
+
+
+    <footer style=" background-color: white; margin-top: 50px;border: thick double #32a1ce;;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 20px;" >
+        <div >
+            <div class="row">
+                <div class="col-12 text-center footer-content">
+                    <div class="footer-icon" >
+                      <a href="https://www.facebook.com"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2dtMZTzFsAL9_Omb18OEEd1rII6Fts065DrHX-kw&usqp=CAU" style="width: 50px; height:50px ; margin-right: 30px;"></a>
+                       <a href="https://twitter.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="data:image/png;base64,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" style="width: 50px; height:50px ; margin-right: 30px;"></a>
+                       <a href="https://www.instagram.com/?hl=fr"><img src="https://davidmeessen.com/wp-content/uploads/2020/09/ew-instagram-logo-transparent-related-keywords-logo-instagram-vector-2017-115629178687gobkrzwak.png" style="width: 50px; height:50px ;"></a>
+                    </div>
+                    <p class="sub-heading footer_text text-black">When you click the "Add Registration Request" button from your registration application form on our website, you indicate that you are familiar with the terms and conditions
+                      Privacy Policies. You voluntarily agree to the terms and conditions set forth </p>
+    
+                    <p class="sub-heading footer_text text-black">This site is the result of a joint national action and commitment by the National Informatics Center, the Independent High Authority for Elections, the Informatics Center of the Ministry of Health, the National Agency for Informatics Safety, telecom operators (Tunisia Telecom, Ooredoo and Orange), the Ministry of Health and the Ministry of Communication Technologies.
+                      When you click the "Add registration request" button from your registration application form on our website, you indicate that you are familiar with the terms and conditions and privacy policies. and that you voluntarily agree to the terms and conditions set forth.
+                      Republic of Tunisia - Ministry of Health - Registration portal for the vaccination campaign against Covid 19
+    <br><span class="fontbold">     All rights reserved © 2021   </span></p>
+    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/part 1/project_2.js"></script>
+  
+
+
+		
+</body>
+</html>
