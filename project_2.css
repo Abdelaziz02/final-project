@@ -147,7 +147,9 @@
   text-decoration-thickness: 2px;
 }
 
-.bouttonds {
+
+
+.bouttonds  {
   overflow-wrap: break-word;
   margin-bottom: 1em;
   text-align: center;
@@ -160,6 +162,7 @@
   display: inline-block;
 }
 
+.bouttonds:hover { background-color: #b8fdff;}
 .p-class { 
   font-family: Oslo Sans,sans-serif;
   -webkit-font-smoothing: antialiased;
